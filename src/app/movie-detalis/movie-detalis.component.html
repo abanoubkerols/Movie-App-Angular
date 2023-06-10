@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row py-5">
+        <div class="col-md-4">
+            <img [src]="oneimage+details.poster_path" alt="" class="w-100">
+        </div>
+        <div class="col-md-8">
+            <div class="item">
+                <h2>{{details.title}}</h2>
+                <p class="text-muted">{{details.tagline}}</p>
+                <div class="d-flex mb-5">
+                    <p class="bg-info p-2 mx-1 rounded-2 " *ngFor="let item of details.genres">{{item.name}}</p>
+                </div>
+                <p>vote : {{details.vote_average}}</p>
+                <p>vote Count : {{details.vote_count}}</p>
+                <p>popularity : {{details.popularity}}</p>
+                <p class="mb-5">released date : {{details.release_date}}</p>
+
+                <p>{{details.overview}}</p>
+            </div>
+        </div>
+
+    </div>
+</div>

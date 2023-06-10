@@ -1,0 +1,14 @@
+<div class="container mt-3">
+    <input type="text " class="my-5  w-50 form-control" [(ngModel)]="term">
+    <div class="row justify-content-center">
+        <div class="col-md-2 position-relative" *ngFor="let item of movie|search:term">
+            <div class="item">
+                <a [routerLink]="['/moviedtalis/' , item.id]">
+                    <img [src]="image+item.poster_path" class="w-100" alt="">
+                    <h3>{{item.title}}</h3>
+                    <div class="position-absolute top-0 end-0 bg-info p-2">{{item.vote_average | number:'1.0-0'}}</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

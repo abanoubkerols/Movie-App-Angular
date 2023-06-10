@@ -1,0 +1,72 @@
+ <div class="container mt-3">
+
+    <div class="row">
+        <div class="col-md-4 d-flex align-items-center section-title"  >
+            <div >
+                <h2>
+                   Tranding <br>
+                   Movies <br>
+                   to Watch now 
+
+                </h2>
+                <p class="text-muted" >
+                    Most Watched Movies by days
+                </p>
+            </div>
+        </div>
+        <div class="col-md-2 position-relative" *ngFor="let item of trading">
+            <div class="item">
+                <img [src]="image+item.poster_path" class="w-100" alt="">
+                <h3>{{item.title}}</h3>
+                <div class="position-absolute top-0 end-0 bg-info p-2">{{item.vote_average | number :'1.0-0'}}</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-4 d-flex align-items-center section-title"  >
+            <div >
+                <h2>
+                   Tranding <br>
+                   tv show <br>
+                   to Watch now 
+
+                </h2>
+                <p class="text-muted" >
+                    Most Watched Movies by days
+                </p>
+            </div>
+        </div>
+        <div class="col-md-2 position-relative" *ngFor="let item of tv">
+            <div class="item">
+                <img [src]="image+item.poster_path" class="w-100" alt="">
+                <h3>{{item.name}}</h3>
+                <div class="position-absolute top-0 end-0 bg-info p-2">{{item.vote_average}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 d-flex align-items-center section-title"  >
+            <div >
+                <h2>
+                   Tranding <br>
+                   People <br>
+                   to Watch now 
+
+                </h2>
+                <p class="text-muted" >
+                    Most Watched Movies by days
+                </p>
+            </div>
+        </div>
+        <div class="col-md-2 position-relative" *ngFor="let item of people">
+            <div class="item">
+                <img [src]="image+item.profile_path" class="w-100" alt="">
+                <h3>{{item.name}}</h3>
+                <div class="position-absolute top-0 end-0 bg-info p-2">{{item.vote_average}}</div>
+            </div>
+        </div>
+    </div>
+ </div>

@@ -1,0 +1,45 @@
+<div class="container   mt-2 ">
+<nav class="d-flex justify-content-between align-items-center">
+  <div class="d-flex align-items-center">
+    <h3>Movie App</h3>
+    <ul class="list-unstyled d-flex ps-3 mb-0" *ngIf="isLogin">
+      <li class="mx-2">
+        <a routerLink="home" routerLinkActive="active-link">Home</a>
+      </li>
+      <li class="mx-2">
+        <a routerLink="about" routerLinkActive="active-link">About</a>
+      </li>
+      <li class="mx-2">
+        <a routerLink="contact" routerLinkActive="active-link">contact</a>
+      </li>
+      <li class="mx-2">
+        <a routerLink="contact" routerLinkActive="active-link">Movies</a>
+      </li>
+      <li class="mx-2">
+        <a routerLink="network" routerLinkActive="active-link">Network</a>
+      </li>
+    </ul>
+  </div>
+  <div class="d-flex">
+    <ul class="list-unstyled d-flex mb-0 mt-1 pe-2">
+      <li class="mx-2"><i class="fab fa-facebook"></i></li>
+      <li class="mx-2"><i class="fab fa-youtube"></i></li>
+      <li class="mx-2"><i class="fab fa-github"></i></li>
+      <li class="mx-2"><i class="fab fa-linkedin"></i></li>
+    </ul>
+
+    <ul class="list-unstyled d-flex mb-0">
+      <li class="mx-2">
+        <a routerLink="login" *ngIf="!isLogin" routerLinkActive="active-link">Login</a>
+      </li>
+      <li class="mx-2">
+        <a routerLink="rigister"*ngIf="!isLogin" routerLinkActive="active-link">Register</a>
+      </li>
+      <li class="mx-2">
+        <span (click)="fireLogOut()"  *ngIf="isLogin" >LogOut</span>
+      </li>
+    </ul>
+  </div>
+
+</nav>
+</div>

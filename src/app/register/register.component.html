@@ -1,0 +1,69 @@
+
+
+<div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+  <h4>
+    {{errorMessage}}
+  </h4>
+
+
+</div>
+<form   [formGroup]="registerForm" (ngSubmit)="register()">
+
+  <div class=" w-75 ">
+    <div class="row flex-column justify-content-center align-items-center ">
+      <div class="col-md-6 offset-md-3  " >
+        <label for="first_name " class="mb-1">first_name</label>
+        <input type="text" id="first_name" class="form-control   " formControlName="first_name">
+        <div  class="alert alert-danger" *ngIf="controlName['first_name'].errors && controlName['first_name'].touched">
+          <p class="mb-0" *ngIf="controlName['first_name'].errors?.['required']">First name is required</p>
+          <p class="mb-0" *ngIf="controlName['first_name'].errors?.['minlength'] ">min length is 3</p>
+          <p class="mb-0" *ngIf="controlName['first_name'].errors?.['maxlength']">max length is 10</p>
+        </div>
+
+        <label for="last_name" class="mb-1">last_name</label>
+        <input type="text" id="last_name" class="form-control " formControlName="last_name">
+        <div class="alert alert-danger" *ngIf="controlName['last_name'].errors && controlName['last_name'].touched">
+          <p class="mb-0" *ngIf="controlName['last_name'].errors?.['required']">last name is required</p>
+          <p class="mb-0" *ngIf="controlName['last_name'].errors?.['minlength']">min length is 3</p>
+          <p class="mb-0" *ngIf="controlName['last_name'].errors?.['maxlength']">max length is 10</p>
+        </div>
+
+        <label for="email" class="mb-1">email</label>
+        <input type="email" id="email" class="form-control " formControlName="email">
+        <div class="alert alert-danger" *ngIf="controlName['email'].errors && controlName['email'].touched">
+          <p class="mb-0" *ngIf="controlName['email'].errors?.['required']">email is required</p>
+        </div>
+
+        <label for="password" class="mb-1">password</label>
+        <input type="password" id="password" class="form-control " formControlName="password">
+        <div class="alert alert-danger" *ngIf="controlName['password'].errors && controlName['password'].touched">
+          <p class="mb-0" *ngIf="controlName['password'].errors?.['required']">password is required</p>
+          <p class="mb-0" *ngIf="controlName['password'].errors?.['pattern']">pattern not match</p>
+        </div>
+
+        <label for="age" class="mb-1">age</label>
+        <input type="number" id="age" class="form-control " formControlName="age">
+        <div class="alert alert-danger" *ngIf="controlName['age'].errors && controlName['age'].touched">
+          <p class="mb-0" *ngIf="controlName['age'].errors?.['required']">age is required</p>
+          <p class="mb-0" *ngIf="controlName['age'].errors?.['min']">min age 16</p>
+          <p class="mb-0" *ngIf="controlName['age'].errors?.['max']">max age 36</p>
+        </div>
+
+        <button  class="btn btn-info mt-2" type="submit">register
+          <i class="fas fa-spinner fa-spin" *ngIf="fireRegister"></i>
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+
+ 
+</form> 
+
+
+
+
+
+
+

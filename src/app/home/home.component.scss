@@ -1,0 +1,23 @@
+.section-title {
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 25%;
+        height: 1px;
+        background-color: rgb(250, 196, 196);
+        display: inline-block;
+        position: absolute;
+        top: 20%;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 80%;
+        height: 1px;
+        background-color: rgb(250, 196, 196);
+        display: inline-block;
+        bottom: 20%;
+    }
+}
